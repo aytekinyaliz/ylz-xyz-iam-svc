@@ -36,7 +36,7 @@ class UserController {
     try {
       const { email } = req.query;
 
-      const user = await userDomainInstance.query(email);
+      const user = await userDomainInstance.query({ email });
 
       return res.json(user);
     } catch(err) {

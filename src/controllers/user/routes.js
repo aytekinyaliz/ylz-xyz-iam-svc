@@ -16,7 +16,7 @@ router.route('/signIn').post(
   userControllerInstance.signIn
 );
 
-router.route('/users/query').get(
+router.route('/query').get(
   authMiddleware(authLevel.private),
   userControllerInstance.query
 );
