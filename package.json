@@ -14,8 +14,10 @@
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "firebase-admin": "8.10.0",
+    "jsonwebtoken": "8.5.1",
     "morgan-body": "2.4.8",
-    "sha1": "1.1.1"
+    "sha1": "1.1.1",
+    "ylz-xyz-auth-mdw": "git+https://github.com/aytekinyaliz/ylz-xyz-auth-mdw.git"
   },
   "devDependencies": {
     "nodemon": "2.0.2"

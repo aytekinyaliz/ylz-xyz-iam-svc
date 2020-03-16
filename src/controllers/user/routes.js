@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { authLevel, authMiddleware } = require('ylz-xyz-auth-mdw');
 
 const userControllerInstance = require('./UserController');
 
@@ -6,12 +7,12 @@ const userControllerInstance = require('./UserController');
 const router = Router();
 
 router.route('/signUp').post(
-  // auth,
+  authMiddleware(authLevel.public),
   userControllerInstance.signUp
 );
 
 router.route('/signIn').post(
-  // auth,
+  authMiddleware(authLevel.public),
   userControllerInstance.signIn
 );
 

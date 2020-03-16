@@ -19,7 +19,7 @@ runningServer.on("listening", async () => {
 
 runningServer.on("error", err => {
   console.log(":::::: GOT ERROR IN STARTING SERVER ::::::");
-  error(err);
+  console.error(err);
 });
 
 runningServer.on("close", () => {
