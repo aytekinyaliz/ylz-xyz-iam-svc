@@ -1,7 +1,7 @@
 FROM node:alpine
 
-RUN apk add --update \
-  git
+# used for git dependency
+RUN apk add --update git
 
 WORKDIR /app
 
