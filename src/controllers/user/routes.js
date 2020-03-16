@@ -16,4 +16,9 @@ router.route('/signIn').post(
   userControllerInstance.signIn
 );
 
+router.route('/users/query').get(
+  authMiddleware(authLevel.private),
+  userControllerInstance.query
+);
+
 module.exports = router;

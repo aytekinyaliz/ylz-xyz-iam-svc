@@ -26,6 +26,12 @@ class UserDomain {
       ? generateToken({ uid: user.id })
       : null;
   }
+
+  async query({ email }) {
+    let user = await userRepositoryInstance.getByEmail({ email });
+
+    return user ? user : null;
+  }
 }
 
 module.exports = new UserDomain();

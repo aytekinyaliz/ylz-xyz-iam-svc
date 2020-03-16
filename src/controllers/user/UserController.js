@@ -31,6 +31,18 @@ class UserController {
       next(err);
     }
   }
+
+  async query(req, res, next) {
+    try {
+      const { email } = req.query;
+
+      const user = await userDomainInstance.query(email);
+
+      return res.json(user);
+    } catch(err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = new UserController();
