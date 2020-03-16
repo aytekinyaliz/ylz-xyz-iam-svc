@@ -33,7 +33,7 @@ class UserDomain {
 
     const token = generateToken({ userId: user.id });
 
-    await tokenRepositoryInstance.createOrUpdate({ userId, token });
+    await tokenRepositoryInstance.createOrUpdate({ userId: user.id, token });
 
     return token;
   }
