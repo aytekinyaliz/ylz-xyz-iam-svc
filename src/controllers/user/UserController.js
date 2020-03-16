@@ -1,11 +1,11 @@
-const userDomainInstance = require('../../domains/UserDomain');
+const iamDomainInstance = require('../../domains/IamDomain');
 
 class UserController {
   async signUp(req, res, next) {
     try {
       const { firstName, lastName, email, password } = req.body;
 
-      const token = await userDomainInstance.signUp({ firstName, lastName, email, password });
+      const token = await iamDomainInstance.signUp({ firstName, lastName, email, password });
 
       return token
         ? res.status(201).json({ token })
@@ -22,7 +22,7 @@ class UserController {
     try {
       const { email, password } = req.body;
 
-      const token = await userDomainInstance.signIn({ email, password });
+      const token = await iamDomainInstance.signIn({ email, password });
 
       return token
         ? res.json({ token })
@@ -32,11 +32,23 @@ class UserController {
     }
   }
 
+  async signOut(req, res, next) {
+    try {
+      const { id: userId } = res.locals.user;
+
+      await iamDomainInstance.signOut({ userId });
+
+      return res.send();
+    } catch(err) {
+      next(err);
+    }
+  }
+
   async query(req, res, next) {
     try {
       const { email } = req.query;
 
-      const user = await userDomainInstance.query({ email });
+      const user = await iamDomainInstance.query({ email });
 
       return res.json(user);
     } catch(err) {

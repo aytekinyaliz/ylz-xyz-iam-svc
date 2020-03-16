@@ -9,10 +9,10 @@ function hash(value) {
   return sha1(value);
 }
 
-function generateToken({ uid }) {
+function generateToken({ userId }) {
   const oneHour = 1000 * 60 * 60;
   return jwt.sign({ 
-    uid, 
+    uid: userId,
     ext: Date.now() + oneHour
   }, privateKey, { algorithm: "HS256" });
 }

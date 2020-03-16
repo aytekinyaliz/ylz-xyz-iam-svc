@@ -16,6 +16,11 @@ router.route('/signIn').post(
   userControllerInstance.signIn
 );
 
+router.route('/signOut').post(
+  authMiddleware(authLevel.private),
+  userControllerInstance.signOut
+);
+
 router.route('/query').get(
   authMiddleware(authLevel.private),
   userControllerInstance.query
