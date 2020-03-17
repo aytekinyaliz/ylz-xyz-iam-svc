@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const compress = require('compression');
+const cors = require('cors');
 const morganBody = require('morgan-body');
 
 const { middlewares: {errorHandler, pageNotFoundHandler} } = require('ylz-xyz-common');
@@ -22,7 +24,15 @@ class Server {
   }
 
   initMiddlewares() {
+    this.app.use(compress());
     this.app.use(bodyParser.json());
+    this.app.use(
+      cors({
+        optionsSuccessStatus: 200,
+        //origin: JSON.parse(this.config.corsOrigin)
+        // credentials: true,
+      })
+    );
     morganBody(this.app);
   }
 
