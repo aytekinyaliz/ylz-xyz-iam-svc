@@ -2,7 +2,7 @@ const firestore = require('../services/firestore');
 
 class TokenRepository {
   constructor() {
-    this.collectionName = 'Tokens';
+    this.collectionName = 'iam-svc-tokens';
     this.tokensCollection = firestore.collection(this.collectionName);
   }
 
