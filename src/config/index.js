@@ -2,7 +2,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-module.exports = {
+const config = {
   apiPrefix: process.env.API_PREFIX,
   nodeEnv: process.env.NODE_ENV,
   port: process.env.PORT,
@@ -19,4 +19,8 @@ module.exports = {
     auth_provider_x509_cert_url: process.env.FIRESTORE_AUTH_PROVIDER_X509_CERT_URL,
     client_x509_cert_url: process.env.FIRESTORE_CLIENT_X509_CERT_URL
   }
-}
+};
+
+console.log('CONFIGURATIONS:', config);
+
+module.exports = config;
