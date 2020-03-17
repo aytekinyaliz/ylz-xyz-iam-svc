@@ -26,13 +26,7 @@ class Server {
   initMiddlewares() {
     this.app.use(compress());
     this.app.use(bodyParser.json());
-    this.app.use(
-      cors({
-        optionsSuccessStatus: 200,
-        //origin: JSON.parse(this.config.corsOrigin)
-        // credentials: true,
-      })
-    );
+    this.app.use(cors());
     morganBody(this.app);
   }
 
