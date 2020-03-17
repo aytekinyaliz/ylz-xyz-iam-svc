@@ -1,0 +1,142 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "5"
+    gcb-build-id: 4f185c30-3317-40c8-85be-85ac3b7d1fd2
+    gcb-trigger-id: ade556ad-6543-4d71-997d-8292c2ccd085
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"4","gcb-build-id":"4f185c30-3317-40c8-85be-85ac3b7d1fd2","gcb-trigger-id":"ade556ad-6543-4d71-997d-8292c2ccd085"},"creationTimestamp":"2020-03-17T03:44:48Z","generation":12,"labels":{"app":"ylz-xyz-iam-svc","app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"ylz-xyz-iam-svc","app.kubernetes.io/version":"ca4a65e0e29ca53756aedc0f72ce728476cd2369"},"name":"ylz-xyz-iam-svc","namespace":"default","resourceVersion":"231331","selfLink":"/apis/apps/v1/namespaces/default/deployments/ylz-xyz-iam-svc","uid":"a6bec6f1-6801-11ea-b055-42010a9c00b1"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"ylz-xyz-iam-svc"}},"strategy":{"rollingUpdate":{"maxSurge":"25%","maxUnavailable":"25%"},"type":"RollingUpdate"},"template":{"metadata":{"annotations":{"gcb-build-id":"4f185c30-3317-40c8-85be-85ac3b7d1fd2","gcb-trigger-id":"ade556ad-6543-4d71-997d-8292c2ccd085"},"creationTimestamp":null,"labels":{"app":"ylz-xyz-iam-svc","app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"ylz-xyz-iam-svc","app.kubernetes.io/version":"ca4a65e0e29ca53756aedc0f72ce728476cd2369"}},"spec":{"containers":[{"env":[{"name":"API_PREFIX","valueFrom":{"configMapKeyRef":{"key":"API_PREFIX","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"NODE_ENV","valueFrom":{"configMapKeyRef":{"key":"NODE_ENV","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"PORT","valueFrom":{"configMapKeyRef":{"key":"PORT","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_TYPE","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_TYPE","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_PROJECT_ID","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_PROJECT_ID","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_PRIVATE_KEY_ID","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_PRIVATE_KEY_ID","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_PRIVATE_KEY","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_PRIVATE_KEY","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_CLIENT_EMAIL","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_CLIENT_EMAIL","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_CLIENT_ID","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_CLIENT_ID","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_AUTH_URI","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_AUTH_URI","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_TOKEN_URI","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_TOKEN_URI","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_AUTH_PROVIDER_X509_CERT_URL","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_AUTH_PROVIDER_X509_CERT_URL","name":"ylz-xyz-iam-svc-config-e8aq"}}},{"name":"FIRESTORE_CLIENT_X509_CERT_URL","valueFrom":{"configMapKeyRef":{"key":"FIRESTORE_CLIENT_X509_CERT_URL","name":"ylz-xyz-iam-svc-config-e8aq"}}}],"image":"gcr.io/ylz-xyz-infra/github.com/aytekinyaliz/ylz-xyz-iam-svc@sha256:3e20d0ad7768bd8e0e858f161be8c18d0a1f2fd61a5c0a937752abd0989743d1","imagePullPolicy":"IfNotPresent","name":"ylz-xyz-iam-svc-1","resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"conditions":[{"lastTransitionTime":"2020-03-17T11:41:07Z","lastUpdateTime":"2020-03-17T11:41:07Z","message":"Deployment has minimum availability.","reason":"MinimumReplicasAvailable","status":"True","type":"Available"},{"lastTransitionTime":"2020-03-17T03:44:49Z","lastUpdateTime":"2020-03-17T11:41:14Z","message":"ReplicaSet \"ylz-xyz-iam-svc-5b7f6985fc\" has successfully progressed.","reason":"NewReplicaSetAvailable","status":"True","type":"Progressing"}],"observedGeneration":12,"readyReplicas":1,"replicas":1,"updatedReplicas":1}}
+  creationTimestamp: "2020-03-17T03:44:48Z"
+  generation: 13
+  labels:
+    app: ylz-xyz-iam-svc
+    app.kubernetes.io/managed-by: gcp-cloud-build-deploy
+    app.kubernetes.io/name: ylz-xyz-iam-svc
+    app.kubernetes.io/version: ca4a65e0e29ca53756aedc0f72ce728476cd2369
+  name: ylz-xyz-iam-svc
+  namespace: default
+  resourceVersion: "237012"
+  selfLink: /apis/apps/v1/namespaces/default/deployments/ylz-xyz-iam-svc
+  uid: a6bec6f1-6801-11ea-b055-42010a9c00b1
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: ylz-xyz-iam-svc
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        gcb-build-id: 4f185c30-3317-40c8-85be-85ac3b7d1fd2
+        gcb-trigger-id: ade556ad-6543-4d71-997d-8292c2ccd085
+      creationTimestamp: null
+      labels:
+        app: ylz-xyz-iam-svc
+        app.kubernetes.io/managed-by: gcp-cloud-build-deploy
+        app.kubernetes.io/name: ylz-xyz-iam-svc
+        app.kubernetes.io/version: ca4a65e0e29ca53756aedc0f72ce728476cd2369
+    spec:
+      containers:
+      - env:
+        - name: API_PREFIX
+          valueFrom:
+            configMapKeyRef:
+              key: API_PREFIX
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              key: NODE_ENV
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              key: PORT
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_TYPE
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_TYPE
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_PROJECT_ID
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_PROJECT_ID
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_PRIVATE_KEY_ID
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_PRIVATE_KEY_ID
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_PRIVATE_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_PRIVATE_KEY
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_CLIENT_EMAIL
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_CLIENT_EMAIL
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_CLIENT_ID
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_CLIENT_ID
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_AUTH_URI
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_AUTH_URI
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_TOKEN_URI
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_TOKEN_URI
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_AUTH_PROVIDER_X509_CERT_URL
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_AUTH_PROVIDER_X509_CERT_URL
+              name: ylz-xyz-iam-svc-config-e8aq
+        - name: FIRESTORE_CLIENT_X509_CERT_URL
+          valueFrom:
+            configMapKeyRef:
+              key: FIRESTORE_CLIENT_X509_CERT_URL
+              name: ylz-xyz-iam-svc-config-e8aq
+        image: gcr.io/ylz-xyz-infra/github.com/aytekinyaliz/ylz-xyz-iam-svc@sha256:3e20d0ad7768bd8e0e858f161be8c18d0a1f2fd61a5c0a937752abd0989743d1
+        imagePullPolicy: IfNotPresent
+        name: ylz-xyz-iam-svc-1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2020-03-17T11:41:07Z"
+    lastUpdateTime: "2020-03-17T11:41:07Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2020-03-17T03:44:49Z"
+    lastUpdateTime: "2020-03-17T12:08:11Z"
+    message: ReplicaSet "ylz-xyz-iam-svc-dfb89b5d" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 13
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
