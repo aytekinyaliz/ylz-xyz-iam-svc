@@ -138,5 +138,5 @@ status:
     type: Available
   observedGeneration: 9
   readyReplicas: 1
-  replicas: 1
+  replicas: 2
   updatedReplicas: 1
