@@ -1,3 +1,5 @@
+const { libs:{constants:{HttpStatusCode}}} = require('ylz-xyz-common');
+
 const iamDomainInstance = require('../../domains/IamDomain');
 
 class UserController {
@@ -8,11 +10,11 @@ class UserController {
       const token = await iamDomainInstance.signUp({ firstName, lastName, email, password });
 
       return token
-        ? res.status(201).json({ token })
-        : res.status(400).json({ message: 'Could not create the user!' });
+        ? res.status(HttpStatusCode.CREATED).json({ token })
+        : res.status(HttpStatusCode.BAD_REQUEST).json({ message: 'Could not create the user!' });
     } catch(err) {
       if(err.code === 'duplicate') {
-        return res.status(400).json({ message: err.message });
+        return res.status(HttpStatusCode.BAD_REQUEST).json({ message: err.message });
       }
       next(err);
     }
@@ -26,7 +28,7 @@ class UserController {
 
       return token
         ? res.json({ token })
-        : res.status(400).json({ message: 'Wrong email or password!' });
+        : res.status(HttpStatusCode.BAD_REQUEST).json({ message: 'Wrong email or password!' });
     } catch(err) {
       next(err);
     }

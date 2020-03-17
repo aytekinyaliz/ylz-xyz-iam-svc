@@ -2,8 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morganBody = require('morgan-body');
 
-const errorHandler = require('./middlewares/errorHandler');
-const pageNotFoundHandler = require('./middlewares/pageNotFoundHandler');
+const { middlewares: {errorHandler, pageNotFoundHandler} } = require('ylz-xyz-common');
 
 class Server {
   constructor(config) {

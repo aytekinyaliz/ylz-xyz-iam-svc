@@ -17,7 +17,8 @@
     "jsonwebtoken": "8.5.1",
     "morgan-body": "2.4.8",
     "sha1": "1.1.1",
-    "ylz-xyz-auth-mdw": "git+https://github.com/aytekinyaliz/ylz-xyz-auth-mdw.git"
+    "ylz-xyz-auth-mdw": "git+https://github.com/aytekinyaliz/ylz-xyz-auth-mdw.git",
+    "ylz-xyz-common": "git+https://github.com/aytekinyaliz/ylz-xyz-common.git"
   },
   "devDependencies": {
     "nodemon": "2.0.2"
