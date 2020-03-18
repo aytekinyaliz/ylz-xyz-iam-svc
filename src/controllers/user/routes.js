@@ -26,4 +26,9 @@ router.route('/query').get(
   userControllerInstance.query
 );
 
+router.route('/').get(
+  authMiddleware(authLevel.private),
+  userControllerInstance.getAll
+);
+
 module.exports = router;

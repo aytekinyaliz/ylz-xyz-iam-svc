@@ -47,6 +47,10 @@ class UserDomain {
 
     return user ? user : null;
   }
+
+  async getAll() {
+    return await userRepositoryInstance.getAll();
+  }
 }
 
 module.exports = new UserDomain();

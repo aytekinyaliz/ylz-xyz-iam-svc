@@ -57,6 +57,16 @@ class UserController {
       next(err);
     }
   }
+
+  async getAll(req, res, next) {
+    try {
+      const users = await iamDomainInstance.getAll();
+
+      res.json(users);
+    } catch(err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = new UserController();

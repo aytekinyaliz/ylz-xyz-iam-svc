@@ -6,6 +6,19 @@ class UserRepository {
     this.usersCollection = firestore.collection(this.collectionName);
   }
 
+  async getAll() {
+    const usersRef = await this.usersCollection.get();
+
+    const users = [];
+    usersRef.forEach(user => {
+      const { password, ...rest } = user.data();
+
+      users.push({ id: user.id, ...rest });
+    });
+  
+    return users;
+  }
+
   async getByEmail({ email }) {
     const users = await this.usersCollection.where('email', '==', email).get();
 
